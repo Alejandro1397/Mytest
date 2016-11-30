@@ -43,7 +43,6 @@ void insertarCd(CD cd){
 }
 
 void imprimeCd(CD cd){
-    printf("**************************\n");
     printf("Nombre del artista: %s\n",cd.nombre);
     printf("Genero: %s\n",cd.genero);
     printf("Nombre del album: %s\n",cd.album);
@@ -55,6 +54,7 @@ void imprimeCd(CD cd){
 void imprimirLista(){
     int j=0;
     for (j = 0; j < indiceAlArreglo; j++) {
+        printf("************CD#%i**********\n",j+1);
         imprimeCd(listaCd[j]);
     }
 }
