@@ -8,6 +8,7 @@ int main(int argc, const char * argv[]) {
     int j=0;
     char nombre[120];
     int canciones;
+    int modifica=0;
     printf("Programa de Cds de musica!\n");
 
     do {
@@ -65,6 +66,8 @@ int main(int argc, const char * argv[]) {
                 break;
             case 10:
                 printf("Modificar Cd\n");
+		imprimirLista();
+		modificarCd(modifica);
                 break;
             default:
                 printf("Opcion no válida\n");

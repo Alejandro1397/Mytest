@@ -163,7 +163,48 @@ void eliminarCd(int indice){
        indiceAlArreglo--;
     }else{
       printf("El indice es incorrecto, intentalo nuevamente");
-    } 
+    }
+} 
+
+void modificarCd(int modifica){
+     int opcionCampos=0;
+     printf("Ingresa el numero de CD que deseas modificar:");
+	scanf("%d",&modifica);
+	if(modifica>=0 && modifica<=indiceAlArreglo){
+	     imprimeCd(listaCd[modifica-1]);
+	     printf("Elige el campo que deseas modificar:"); 
+	     opcionCampos=imprimeCd();
+	     switch(opcionCampos){
+	            case 1: 
+                    printf("El nombre del artista actual es: %s\n",listaCd[modifica-1].nombre);
+	            printf("Introduce el nuevo artista:");
+	            scanf("%*c%[^\n]",listaCd[modifica-1].nombre);
+		    break;
+		    case 2:
+		    printf("El genero actual es: %s\n",listaCd[modifica-1].genero);
+		    printf("Introduce el genero nuevo:");
+		    scanf("%*c%[^\n]",listaCd[modifica-1].genero);
+		    break;
+		    case 3:
+                    printf("El album actual es: %s\n",listaCd[modifica-1].album);
+		    printf("Introduce el album nuevo:");
+		    scanf("%*c%[^\n]",listaCd[modifica-1].album);
+  		    break;
+		    case 4:
+		    printf("El numero de cancones actual es: %d\n",listaCd[modifica-1].canciones);
+		    printf("Introduce el nuevo numero de canciones:");
+		    scanf("%d",listaCd[modifica-1].canciones);
+	            break;
+		    case 5:
+ 		    printf("El precio actual es: %.2f\n",listaCd[modifica-1].precio);
+		    printf("Introduce el nuevo precio:");
+		    scanf("%f",listaCd[modifica-1].precio);
+	            break;
+		    default:
+		    printf("Opcion no valida!!\n");
+		    break; 
+		  }
+       }
     
 }
 
