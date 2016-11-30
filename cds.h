@@ -84,7 +84,7 @@ void calcularPromedioPrecio(){
     for (j = 0; j < indiceAlArreglo; j++) {
         tmp= tmp + listaCd[j].precio;
     }
-    printf("\nEl promedio de las canciones de los albunes en la BD es: %d!",tmp/indiceAlArreglo);
+    printf("\nEl promedio de los precios de los albunes en la BD es: %d!",tmp/indiceAlArreglo);
 }
 
 int menu(){
