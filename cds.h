@@ -47,7 +47,7 @@ void imprimeCd(CD cd){
     printf("Genero: %s\n",cd.genero);
     printf("Nombre del album: %s\n",cd.album);
     printf("Numero de canciones: %d\n",cd.canciones);
-    printf("precio:%.2f\n",cd.precio);
+    printf("precio:$%.2f\n",cd.precio);
     printf("**************************\n");
 }
 
@@ -86,7 +86,7 @@ void calcularPromedioPrecio(){
     for (j = 0; j < indiceAlArreglo; j++) {
         tmp= tmp + listaCd[j].precio;
     }
-    printf("\nEl promedio de los precios de los albunes en la BD es: %d!",tmp/indiceAlArreglo);
+    printf("\nEl promedio de los precios de los albunes en la BD es: $%d!",tmp/indiceAlArreglo);
 }
 
 int menu(){
@@ -160,13 +160,14 @@ void eliminarCd(int borrar){
     printf("Introduce el numero de CD que deseas eliminar:\n");
     scanf("%d",&borrar);
     if(borrar >= 0 && borrar <= indiceAlArreglo){
+       printf("**************************\n");
        imprimeCd(listaCd[borrar-1]);
        for(b=borrar; b<=indiceAlArreglo; b++){
        listaCd[b-1]=listaCd[b];
        }
        indiceAlArreglo--;
     }else{
-      printf("El indice es incorrecto, intentalo nuevamente");
+      printf("El numero de CD es incorrecto, intentelo nuevamente");
     }
 } 
 
@@ -190,6 +191,7 @@ void modificarCd(int modifica){
      printf("Ingresa el numero de CD que deseas modificar:");
 	scanf("%d",&modifica);
 	if(modifica>=0 && modifica<=indiceAlArreglo){
+             printf("**************************\n");
 	     imprimeCd(listaCd[modifica-1]); 
 	     int modif=menuModifica();
 	     switch(modif){
