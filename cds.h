@@ -89,7 +89,7 @@ void calcularPromedioPrecio(){
 
 int menu(){
     int opcion=0;
-    printf("\n----------- Menu para la aplicacion de BD para alumnos ---------\n");
+    printf("\n----------- Menu para la aplicacion de BD para Cds---------\n");
     printf("(1) Crear lista.\n");
     printf("(2) Guardar a archivo.\n");
     printf("(3) Leer desde archivo.\n");
@@ -166,15 +166,29 @@ void eliminarCd(int indice){
     }
 } 
 
+int menuModifica(){
+   int modif;
+    printf("\n----------- Menu para modificacion de datos ---------\n");
+    printf("(1) Cambiar nombre del artista.\n");
+    printf("(2) Modificar el genero.\n");
+    printf("(3) Cambiar el nombre del album.\n");
+    printf("(4) Modificar el numero de canciones.\n");
+    printf("(5) Cambiar el precio. \n");
+    printf("(0) SALIR\n");
+    printf("\n\nElige una opcion:");
+    fflush(stdin); 
+    scanf("%i",&modif);
+    return modif;
+
+}
+
 void modificarCd(int modifica){
-     int opcionCampos=0;
      printf("Ingresa el numero de CD que deseas modificar:");
 	scanf("%d",&modifica);
 	if(modifica>=0 && modifica<=indiceAlArreglo){
-	     imprimeCd(listaCd[modifica-1]);
-	     printf("Elige el campo que deseas modificar:"); 
-	     opcionCampos=imprimeCd();
-	     switch(opcionCampos){
+	     imprimeCd(listaCd[modifica-1]); 
+	     int modif=menuModifica();
+	     switch(modif){
 	            case 1: 
                     printf("El nombre del artista actual es: %s\n",listaCd[modifica-1].nombre);
 	            printf("Introduce el nuevo artista:");
@@ -191,14 +205,14 @@ void modificarCd(int modifica){
 		    scanf("%*c%[^\n]",listaCd[modifica-1].album);
   		    break;
 		    case 4:
-		    printf("El numero de cancones actual es: %d\n",listaCd[modifica-1].canciones);
+		    printf("El numero de canciones actual es: %d\n",listaCd[modifica-1].canciones);
 		    printf("Introduce el nuevo numero de canciones:");
-		    scanf("%d",listaCd[modifica-1].canciones);
+		    scanf("%d",&listaCd[modifica-1].canciones);
 	            break;
 		    case 5:
  		    printf("El precio actual es: %.2f\n",listaCd[modifica-1].precio);
 		    printf("Introduce el nuevo precio:");
-		    scanf("%f",listaCd[modifica-1].precio);
+		    scanf("%f",&listaCd[modifica-1].precio);
 	            break;
 		    default:
 		    printf("Opcion no valida!!\n");

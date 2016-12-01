@@ -8,7 +8,8 @@ int main(int argc, const char * argv[]) {
     int j=0;
     char nombre[120];
     int canciones;
-    int modifica=0;
+    int modifica;
+    int indice;
     printf("Programa de Cds de musica!\n");
 
     do {
@@ -62,7 +63,7 @@ int main(int argc, const char * argv[]) {
                 break;
             case 9:
                 printf("Eliminar Cd\n");
-                eliminarCd(indiceAlArreglo-1);
+                eliminarCd(indice);
                 break;
             case 10:
                 printf("Modificar Cd\n");
