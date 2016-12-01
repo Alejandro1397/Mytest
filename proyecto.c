@@ -9,7 +9,7 @@ int main(int argc, const char * argv[]) {
     char nombre[120];
     int canciones;
     int modifica;
-    int indice;
+    int borrar;
     printf("Programa de Cds de musica!\n");
 
     do {
@@ -63,7 +63,8 @@ int main(int argc, const char * argv[]) {
                 break;
             case 9:
                 printf("Eliminar Cd\n");
-                eliminarCd(indice);
+                imprimirLista();
+                eliminarCd(borrar);
                 break;
             case 10:
                 printf("Modificar Cd\n");
