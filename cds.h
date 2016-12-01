@@ -64,6 +64,7 @@ void buscarPorNombreArtista(char *nombre){
     int j=0;
     for (j = 0; j < indiceAlArreglo; j++) {
         if(strcmp(listaCd[j].nombre,nombre) == 0){
+            printf("**************************\n");
             imprimeCd(listaCd[j]);
         }
     }
@@ -73,6 +74,7 @@ void buscarPorCanciones(int c){
     int j=0;
     for (j = 0; j < indiceAlArreglo; j++) {
         if(c == listaCd[j].canciones){
+            printf("**************************\n");
             imprimeCd(listaCd[j]);
         }
     }
@@ -153,12 +155,14 @@ void leerRegistros(int tam){
     fclose(ptrF);
 }
 
-void eliminarCd(int indice){
-    int i=indice;
-    if(indice >= 0 && indice <= indiceAlArreglo){
-       imprimeCd(listaCd[indice]);
-       for(i=indice; i<=indiceAlArreglo; i++){
-         listaCd[i]=listaCd[i+1];
+void eliminarCd(int borrar){
+    int b=borrar;
+    printf("Introduce el numero de CD que deseas eliminar:\n");
+    scanf("%d",&borrar);
+    if(borrar >= 0 && borrar <= indiceAlArreglo){
+       imprimeCd(listaCd[borrar-1]);
+       for(b=borrar; b<=indiceAlArreglo; b++){
+       listaCd[b-1]=listaCd[b];
        }
        indiceAlArreglo--;
     }else{
@@ -218,7 +222,9 @@ void modificarCd(int modifica){
 		    printf("Opcion no valida!!\n");
 		    break; 
 		  }
-       }
+       }else{
+         printf("Numero de CD no encontrado, intentalo nuevamente\n");
+         }
     
 }
 
