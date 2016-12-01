@@ -10,7 +10,8 @@ int main(int argc, const char * argv[]) {
     int canciones;
     int modifica;
     int borrar;
-    printf("Programa de Cds de musica!\n");
+    printf("\nPrograma de Cds de musica!\n");
+    printf("CopyRight derechos reservados Alejandro Ashmed\n");
 
     do {
         opcion=menu();
